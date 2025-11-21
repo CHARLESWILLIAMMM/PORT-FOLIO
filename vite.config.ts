@@ -6,9 +6,9 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  // Use root base for development (so the dev server serves at '/') and a relative
-  // base for production so assets load correctly on GitHub Pages regardless of config.
-  base: mode === 'development' ? '/' : './',
+  // Use root base for development and production on Vercel/Netlify.
+  // For local dev and modern hosts we can serve from '/'.
+  base: '/',
   
   server: {
     host: "::",
