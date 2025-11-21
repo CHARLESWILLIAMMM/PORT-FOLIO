@@ -7,8 +7,8 @@ import { componentTagger } from "lovable-tagger";
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
   // Use root base for development (so the dev server serves at '/') and the GitHub Pages
-  // subdirectory base for production builds.
-  base: mode === 'development' ? '/' : '/charles-portfolio-main/',
+  // subdirectory base for production builds (repo name is PORT-FOLIO).
+  base: mode === 'development' ? '/' : '/PORT-FOLIO/',
   
   server: {
     host: "::",
