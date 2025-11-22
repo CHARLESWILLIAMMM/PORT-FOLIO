@@ -1,3 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Charles William | Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Inter:wght@400;600;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-color: #FFFCF8;
+    }
+    * {
+      box-sizing: border-box;
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-black);
+    /* --- TYPOGRAPHY --- */
+    h1, h2, h3, .mega-text {
+      font-family: 'Archivo', sans-serif;
+    /* --- NAVBAR --- */
+    nav {
+      display: flex;
+    .logo {
+      font-weight: 900;
+      font-size: 1.5rem;
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text-black);
+    /* --- HERO SECTION --- */
+    .hero {
+      padding: 6rem 2rem 4rem;
+    .hero-header {
+      margin-bottom: 4rem;
+      position: relative;
+    .name-title {
+      font-size: clamp(3.5rem, 11vw, 9rem);
+      color: var(--accent-green); /* GREEN COLOR RESTORED */
+    /* --- STICKER ANIMATION (RESTORED) --- */
+    .sticker-star {
+      position: absolute;
+    @keyframes spinSlow { 
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); } 
+    /* --- BENTO GRID --- */
+    .bento-grid {
+      display: grid;
+    .bento-box {
+      background: #fff;
+      border: 2px solid #eee;
+    .skills-section {
+      max-width: 1000px;
+      margin: 0 auto;
+    .section-header {
+      font-size: 3rem;
+      margin: 4rem 0 3rem;
+    .pill-badge {
+      background: var(--text-black);
+      color: white;
+    .accordion-item {
+      border: 3px solid #000;
+      background: #fff;
+    .accordion-header {
+      padding: 2rem;
+      display: flex;
+    .accordion-title {
+      font-size: 2rem;
+      font-family: 'Archivo', sans-serif;
+    .accordion-content {
+      max-height: 0;
+      overflow: hidden;
+    .skill-desc {
+      font-size: 1.2rem;
+      line-height: 1.5;
+    .tech-stack {
+      display: flex;
+      flex-wrap: wrap;
+    /* Active States */
+    .accordion-item.active {
+      box-shadow: 8px 8px 0px #000;
+  /* Item Colors */
+  .item-1.active { background-color: var(--accent-green); }
+  .item-2.active { background-color: var(--accent-yellow); }
+    /* --- MARQUEE --- */
+    .marquee-container {
+      background: var(--accent-blue);
+    .marquee-content {
+      display: inline-block;
+      animation: marquee 20s linear infinite;
+    /* --- CTA & FOOTER --- */
+    .cta-section {
+      padding: 6rem 2rem;
+    footer { padding: 2rem; text-align: center; font-weight: bold; background: white; border-top: 2px solid #eee; }
+
+    @media (max-width: 768px) {
+      .hero-header .name-title { font-size: 13vw; }
+      .accordion-title { font-size: 1.4rem; }
+      .cta-box { padding: 2rem; width: 90%; }
+      .sticker-star { width: 70px; height: 70px; font-size: 0.6rem; top: -20px; right: -10px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <div class="logo">
+      <div class="logo-dot"></div>
+      CHARLES WILLIAM.
+    </div>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="mailto:charleswilliamjoseph78@gmail.com">Contact</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-header">
+        <h1 class="name-title">
+          CHARLES <br> WILLIAM
+          <!-- Sticker Restored Here -->
+          <div class="sticker-star">OPEN TO<br>WORK</div>
+        </h1>
+      </div>
+
+      <!-- ABOUT SECTION (Bento Grid) -->
+      <div class="bento-grid" id="about">
+        <!-- Introduction -->
+        <div class="bento-box" style="grid-column: span 2;">
+          <h3 class="bento-title">Who am I?</h3>
+          <p style="font-size: 1.3rem; line-height: 1.6; font-weight: 500;">
+            I don't just write code; I build <span style="background: var(--accent-yellow);">digital ecosystems</span>.
+          </p>
+          <p style="font-size: 1.1rem; line-height: 1.6; margin-top: 1rem; color: #444;">
+            By combining high-performance <strong>FinTech logic</strong> with immersive <strong>3D visuals</strong> and the future-proof security of <strong>Web3</strong>, I create applications that are as robust as they are beautiful.
+          </p>
+        </div>
+                
+        <!-- Quick Tech Summary -->
+        <div class="bento-box box-blue" style="grid-column: span 2;">
+          <div style="display: flex; justify-content: space-between; align-items: center; height: 100%;">
+            <div>
+              <h3 class="bento-title">The Stack</h3>
+              <ul style="list-style: none; font-size: 1.2rem; line-height: 1.8; font-weight: 600;">
+                <li>✦ React Native</li>
+                <li>✦ AI & Python</li>
+                <li>✦ Solidity & Web3</li>
+                <li>✦ WebGL & Three.js</li>
+              </ul>
+            </div>
+            <!-- Decorative element -->
+            <div style="font-size: 4rem; opacity: 0.3; font-weight: 900;">
+              {}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Marquee -->
+    <div class="marquee-container">
+      <div class="marquee-content">
+        WEB3 & BLOCKCHAIN ✦ AI ANALYTICS ✦ 3D EXPERIENCES ✦ REACT NATIVE ✦ WEB3 & BLOCKCHAIN ✦ AI ANALYTICS ✦ 3D EXPERIENCES ✦ REACT NATIVE ✦
+      </div>
+    </div>
+
+    <!-- SKILLS SECTION -->
+    <section id="skills" class="skills-section">
+      <div class="section-header">
+        <h2>Services I Offer</h2>
+        <div class="pill-badge">Expertise</div>
+      </div>
+
+      <div class="skill-accordion">
+                
+        <!-- Skill 1: FinTech -->
+        <div class="accordion-item item-1">
+          <div class="accordion-header">
+            <h3 class="accordion-title">FinTech Mobile App</h3>
+            <span class="accordion-icon">+</span>
+          </div>
+          <div class="accordion-content">
+            <p class="skill-desc">React Native app development with AI-powered financial insights and real-time analytics integration.</p>
+            <div class="tech-stack">
+              <span class="tech-tag">React Native</span>
+              <span class="tech-tag">Node.js</span>
+              <span class="tech-tag">AI Integration</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      © 2025 CHARLES WILLIAM. ALL RIGHTS RESERVED.
+    </footer>
+  </div>
+
+  <script>
+    // Your JavaScript code here
+  </script>
+</body>
+</html>
 <!doctype html>
 <html lang="en">
   <head>
