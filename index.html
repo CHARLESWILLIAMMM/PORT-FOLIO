@@ -83,7 +83,6 @@
         /* --- CTA & FOOTER --- */
         .cta-section{padding:6rem 2rem;margin-top:4rem;background:repeating-linear-gradient(90deg,#ffffff,#ffffff 20px,var(--accent-green) 20px,var(--accent-green) 40px);border-top:3px solid #000;border-bottom:3px solid #000;text-align:center}
         .cta-box{background:white;display:inline-block;padding:3rem 5rem;border:3px solid #000;box-shadow:15px 15px 0 #000;max-width:90%;box-sizing:border-box}
-        .cta-title{font-family:'Archivo',sans-serif;font-size:2.5rem;font-weight:900;text-transform:uppercase;line-height:1.1}
         .cta-btn{background:var(--text-black);color:white;padding:1rem 3rem;font-size:1.2rem;border:none;border-radius:50px;cursor:pointer;transition:.3s;text-transform:uppercase;font-weight:bold;text-decoration:none;display:inline-block}
         .cta-btn:hover{background:var(--accent-blue);transform:scale(1.05)}
         footer{padding:2rem;text-align:center;font-weight:700;background:white;border-top:2px solid #eee}
@@ -96,7 +95,7 @@
             .hero-header .name-title{font-size:12vw}
             .accordion-title{font-size:1.4rem}
             .cta-box{padding:2rem 1.5rem;max-width:88%;width:auto;box-sizing:border-box}
-            .cta-title{font-size:1.75rem;line-height:1.2;word-wrap:break-word}
+            .cta-box .cta-title{font-size:clamp(1.5rem,5vw,2rem);line-height:1.2;word-wrap:break-word}
             .section-header{padding:0 0.5rem;flex-wrap:wrap}
             .section-header h2{font-size:1.75rem;line-height:1.1;word-break:break-word;max-width:100%}
             .sticker-star{width:64px;height:64px;font-size:.55rem;top:-18px;right:-8px}
@@ -121,7 +120,7 @@
             .nav-toggle{font-size:1.1rem}
             .nav-links a{padding:.3rem .5rem;font-size:.9rem}
             .cta-box{padding:1.5rem 1rem;max-width:85%}
-            .cta-title{font-size:1.5rem;line-height:1.15}
+            .cta-box .cta-title{font-size:1.5rem;line-height:1.15}
         }
     </style>
 </head>
@@ -164,3 +163,4 @@
                 <div class="bento-box box-blue" style="grid-column: span 2;">
                     <div style="display: flex; justify-content: space-between; align-items: center; height: 100%;">
                         <div>
+                            <h3 class="bento-title">The Stack</h3>
