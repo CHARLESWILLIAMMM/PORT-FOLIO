@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
     <title>Charles William | Portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,6 +22,8 @@
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
+        /* Prevent mobile browsers from auto-zooming text */
+        html, body { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; touch-action: manipulation; }
         html { scroll-behavior: smooth; }
         body { background-color: var(--bg-color); color: var(--text-black); font-family: 'Inter', sans-serif; overflow-x: hidden; }
 
@@ -104,6 +106,9 @@
             /* adjust link styles for side-by-side layout */
             .nav-links a{margin:0;padding:.35rem .7rem;border-radius:999px;background:transparent;font-size:.95rem}
             .nav-links a + a{margin-left:0.4rem}
+            /* Stack section header (title + pill) on small screens */
+            .section-header{flex-direction:column;align-items:flex-start;gap:8px}
+            .section-header .pill-badge{margin-left:0}
         }
 
         /* Very small phones */
