@@ -95,11 +95,14 @@
             .cta-box{padding:2rem;width:90%}
             .sticker-star{width:70px;height:70px;font-size:.6rem;top:-20px;right:-10px}
             /* Mobile nav: hide links by default and show toggle */
-            .nav-links{display:none;position:fixed;top:68px;right:12px;background:white;padding:1rem;flex-direction:column;gap:12px;border-radius:10px;box-shadow:0 8px 24px rgba(0,0,0,0.12);z-index:250}
-            .nav-links.open{display:flex}
+            .nav-links{display:none;position:fixed;top:68px;left:50%;transform:translateX(-50%);background:rgba(255,255,255,0.98);padding:0.25rem 0.6rem;gap:12px;border-radius:999px;box-shadow:0 10px 30px rgba(0,0,0,0.12);z-index:250}
+            .nav-links.open{display:flex;flex-direction:row;align-items:center}
             .nav-toggle{display:block}
             /* Make bento grid more mobile-friendly */
             .bento-box{min-height:220px}
+            /* adjust link styles for side-by-side layout */
+            .nav-links a{margin:0;padding:.5rem 0.9rem;border-radius:999px;background:transparent}
+            .nav-links a + a{margin-left:0.6rem}
         }
     </style>
 </head>
@@ -244,6 +247,38 @@
                 accordions.forEach(otherAcc => { if (otherAcc !== acc && otherAcc.classList.contains('active')) otherAcc.classList.remove('active'); });
             });
         });
+
+        // --- Mobile nav toggle ---
+        const navToggle = document.querySelector('.nav-toggle');
+        const navLinks = document.getElementById('navLinks');
+        if (navToggle && navLinks) {
+            navToggle.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const isOpen = navLinks.classList.toggle('open');
+                navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+                navToggle.textContent = isOpen ? '✕' : '☰';
+            });
+
+            // close on outside click
+            document.addEventListener('click', (e) => {
+                if (!navLinks.classList.contains('open')) return;
+                const target = e.target;
+                if (!navLinks.contains(target) && !navToggle.contains(target)) {
+                    navLinks.classList.remove('open');
+                    navToggle.setAttribute('aria-expanded', 'false');
+                    navToggle.textContent = '☰';
+                }
+            });
+
+            // close on Escape
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && navLinks.classList.contains('open')) {
+                    navLinks.classList.remove('open');
+                    navToggle.setAttribute('aria-expanded', 'false');
+                    navToggle.textContent = '☰';
+                }
+            });
+        }
     </script>
 </body>
 </html>
