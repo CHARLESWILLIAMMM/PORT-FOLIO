@@ -90,19 +90,29 @@
             .hero{padding:4.5rem 1.25rem 3rem}
         }
         @media (max-width:768px){
-            .hero-header .name-title{font-size:13vw}
+            .hero-header .name-title{font-size:12vw}
             .accordion-title{font-size:1.4rem}
-            .cta-box{padding:2rem;width:90%}
-            .sticker-star{width:70px;height:70px;font-size:.6rem;top:-20px;right:-10px}
-            /* Mobile nav: hide links by default and show toggle */
-            .nav-links{display:none;position:fixed;top:68px;left:50%;transform:translateX(-50%);background:rgba(255,255,255,0.98);padding:0.25rem 0.6rem;gap:12px;border-radius:999px;box-shadow:0 10px 30px rgba(0,0,0,0.12);z-index:250}
+            .cta-box{padding:1.5rem;max-width:92%;width:auto;box-sizing:border-box}
+            .cta-box .cta-title{font-size:clamp(1.4rem,6vw,2.2rem);line-height:1.05;word-break:break-word;overflow-wrap:break-word}
+            .sticker-star{width:64px;height:64px;font-size:.55rem;top:-18px;right:-8px}
+            /* Mobile nav: compact centered pill row */
+            .nav-links{display:none;position:fixed;top:64px;left:50%;transform:translateX(-50%);background:rgba(255,255,255,0.98);padding:0.15rem 0.5rem;gap:8px;border-radius:999px;box-shadow:0 8px 20px rgba(0,0,0,0.12);z-index:250}
             .nav-links.open{display:flex;flex-direction:row;align-items:center}
-            .nav-toggle{display:block}
+            .nav-toggle{display:block;padding:.2rem .4rem;font-size:1.25rem}
             /* Make bento grid more mobile-friendly */
-            .bento-box{min-height:220px}
+            .bento-box{min-height:200px}
             /* adjust link styles for side-by-side layout */
-            .nav-links a{margin:0;padding:.5rem 0.9rem;border-radius:999px;background:transparent}
-            .nav-links a + a{margin-left:0.6rem}
+            .nav-links a{margin:0;padding:.35rem .7rem;border-radius:999px;background:transparent;font-size:.95rem}
+            .nav-links a + a{margin-left:0.4rem}
+        }
+
+        /* Very small phones */
+        @media (max-width:420px){
+            .hero-header .name-title{font-size:11vw}
+            .sticker-star{display:none}
+            .nav-toggle{font-size:1.1rem}
+            .nav-links a{padding:.3rem .5rem;font-size:.9rem}
+            .cta-box .cta-title{font-size:1.4rem}
         }
     </style>
 </head>
