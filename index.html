@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Charles William | Portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,14 +22,21 @@
         }
 
         * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
-        html {
-            scroll-behavior: smooth;
-        }
+html, body {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    touch-action: manipulation;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
 
         body {
             background-color: var(--bg-color);
@@ -352,11 +359,16 @@
         footer { padding: 2rem; text-align: center; font-weight: bold; background: white; border-top: 2px solid #eee; }
 
         @media (max-width: 768px) {
-            .hero-header .name-title { font-size: 13vw; }
-            .accordion-title { font-size: 1.4rem; }
-            .cta-box { padding: 2rem; width: 90%; }
-            .sticker-star { width: 70px; height: 70px; font-size: 0.6rem; top: -20px; right: -10px; }
-        }
+    .hero-header .name-title { font-size: 12vw; }
+    .accordion-title { font-size: 1.4rem; }
+    .cta-box { padding: 2rem 1.5rem; max-width: 88%; }
+    .section-header { padding: 0 0.5rem; flex-wrap: wrap; }
+    .section-header h2 { font-size: 1.75rem; line-height: 1.1; max-width: 100%; }
+    .sticker-star { width: 64px; height: 64px; font-size: 0.55rem; top: -18px; right: -8px; }
+    .nav-links { gap: 1.5rem; }
+    .nav-links a { font-size: 0.95rem; }
+}
+
     </style>
 </head>
 <body>
@@ -368,10 +380,9 @@
             CHARLES WILLIAM.
         </div>
         <div class="nav-links">
-            <a href="#about">About</a>
-            <a href="#skills">Skills</a>
-            <a href="mailto:charleswilliamjoseph78@gmail.com">Contact</a>
-        </div>
+    <a href="#skills">Skills</a>
+    <a href="mailto:charleswilliamjoseph78@gmail.com">Contact</a>
+</div>
     </nav>
 
     <div class="container">
