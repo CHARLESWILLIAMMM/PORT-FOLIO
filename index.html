@@ -34,6 +34,10 @@
         .logo-dot{width:12px;height:12px;background:var(--accent-blue);border-radius:50%}
         .nav-links a{text-decoration:none;color:var(--text-black);font-weight:600;margin-left:2rem}
         .nav-links a:hover{color:var(--accent-blue)}
+        .nav-toggle{display:none;background:transparent;border:none;font-size:1.6rem;cursor:pointer}
+
+        /* container spacing and responsive tweaks */
+        .container{max-width:1400px;margin:0 auto;padding:0 2rem}
 
         /* --- HERO SECTION --- */
         .hero{padding:6rem 2rem 4rem;max-width:1400px;margin:0 auto;position:relative}
@@ -44,7 +48,7 @@
         @keyframes spinSlow{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
 
         /* --- BENTO GRID --- */
-        .bento-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem;padding-bottom:4rem}
+        .bento-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem;padding-bottom:4rem}
         .bento-box{background:#fff;border:2px solid #eee;border-radius:24px;padding:2rem;position:relative;overflow:hidden;transition:transform .3s;min-height:300px;display:flex;flex-direction:column;justify-content:space-between}
         .bento-box:hover{transform:translateY(-8px);border-color:var(--text-black);box-shadow:8px 8px 0 var(--text-black)}
         .box-blue{background:var(--accent-blue);color:#fff}.bento-title{font-size:2rem;font-weight:800;margin-bottom:1rem;font-family:'Archivo',sans-serif}
@@ -81,7 +85,22 @@
         .cta-btn:hover{background:var(--accent-blue);transform:scale(1.05)}
         footer{padding:2rem;text-align:center;font-weight:700;background:white;border-top:2px solid #eee}
 
-        @media (max-width:768px){.hero-header .name-title{font-size:13vw}.accordion-title{font-size:1.4rem}.cta-box{padding:2rem;width:90%}.sticker-star{width:70px;height:70px;font-size:.6rem;top:-20px;right:-10px}}
+        @media (max-width:1024px){
+            .container{padding:0 1.25rem}
+            .hero{padding:4.5rem 1.25rem 3rem}
+        }
+        @media (max-width:768px){
+            .hero-header .name-title{font-size:13vw}
+            .accordion-title{font-size:1.4rem}
+            .cta-box{padding:2rem;width:90%}
+            .sticker-star{width:70px;height:70px;font-size:.6rem;top:-20px;right:-10px}
+            /* Mobile nav: hide links by default and show toggle */
+            .nav-links{display:none;position:fixed;top:68px;right:12px;background:white;padding:1rem;flex-direction:column;gap:12px;border-radius:10px;box-shadow:0 8px 24px rgba(0,0,0,0.12);z-index:250}
+            .nav-links.open{display:flex}
+            .nav-toggle{display:block}
+            /* Make bento grid more mobile-friendly */
+            .bento-box{min-height:220px}
+        }
     </style>
 </head>
 <body>
@@ -92,7 +111,8 @@
             <div class="logo-dot"></div>
             CHARLES WILLIAM.
         </div>
-        <div class="nav-links">
+        <button class="nav-toggle" aria-label="Menu">☰</button>
+        <div class="nav-links" id="navLinks">
             <a href="#skills">Skills</a>
             <a href="mailto:charleswilliamjoseph78@gmail.com">Contact</a>
         </div>
