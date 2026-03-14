@@ -45,6 +45,10 @@ html {
             overflow-x: hidden;
         }
 
+        .container {
+            overflow-x: hidden;
+        }
+
         /* --- TYPOGRAPHY --- */
         h1, h2, h3, .mega-text {
             font-family: 'Archivo', sans-serif;
@@ -155,6 +159,10 @@ html {
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 1.5rem;
             padding-bottom: 4rem;
+        }
+
+        .bento-col-2 {
+            grid-column: span 2;
         }
 
         .bento-box {
@@ -342,6 +350,15 @@ html {
             border: 3px solid #000;
             box-shadow: 15px 15px 0px #000;
         }
+        .cta-heading {
+            font-size: clamp(2rem, 6vw, 3rem);
+            font-weight: 900;
+            font-family: 'Archivo', sans-serif;
+            color: var(--accent-blue);
+            margin-bottom: 1rem;
+            line-height: 1.05;
+            text-align: center;
+        }
         .cta-btn {
             background: var(--text-black);
             color: white;
@@ -360,14 +377,49 @@ html {
         footer { padding: 2rem; text-align: center; font-weight: bold; background: white; border-top: 2px solid #eee; }
 
         @media (max-width: 768px) {
+    /* Hero */
+    .hero { padding: 3rem 1rem 2rem; }
     .hero-header .name-title { font-size: 12vw; }
-    .accordion-title { font-size: 1.4rem; }
-    .cta-box { padding: 2rem 1.5rem; max-width: 88%; }
-    .section-header { padding: 0 0.5rem; flex-wrap: wrap; }
-    .section-header h2 { font-size: 1.75rem; line-height: 1.1; max-width: 100%; }
     .sticker-star { width: 64px; height: 64px; font-size: 0.55rem; top: -18px; right: -8px; }
-    .nav-links { gap: 1.5rem; }
-    .nav-links a { font-size: 0.95rem; }
+
+    /* Bento grid: force single column on mobile */
+    .bento-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    .bento-col-2 {
+        grid-column: span 1;
+    }
+    .bento-grid .bento-box {
+        min-height: 220px;
+    }
+
+    /* Navbar */
+    nav { padding: 1rem; }
+    .logo { font-size: 1.1rem; }
+    .nav-links a { margin-left: 1rem; font-size: 0.9rem; }
+
+    /* Skills accordion */
+    .accordion-title { font-size: 1.4rem; }
+    .accordion-header { padding: 1.25rem 1rem; }
+    .accordion-content { padding: 0 1rem; }
+    .skill-desc { font-size: 1rem; }
+    .skills-section { padding: 1rem; }
+
+    /* Section header */
+    .section-header { padding: 0 0.5rem; flex-wrap: wrap; font-size: 2rem; margin: 2.5rem 0 2rem; }
+    .section-header h2 { font-size: 1.75rem; line-height: 1.1; max-width: 100%; }
+
+    /* CTA section */
+    .cta-section { padding: 4rem 1rem; }
+    .cta-box {
+        padding: 2rem 1.5rem;
+        width: 90%;
+        max-width: 90%;
+        box-shadow: 8px 8px 0px #000;
+    }
+    .cta-heading { font-size: clamp(1.6rem, 8vw, 2.2rem); }
+    .cta-btn { padding: 0.85rem 2rem; font-size: 1rem; }
 }
 
     </style>
@@ -400,7 +452,7 @@ html {
             <!-- ABOUT SECTION (Bento Grid) -->
             <div class="bento-grid" id="about">
                 <!-- Introduction -->
-                <div class="bento-box" style="grid-column: span 2;">
+                <div class="bento-box bento-col-2">
                     <h3 class="bento-title">Who am I?</h3>
                     <p style="font-size: 1.3rem; line-height: 1.6; font-weight: 500;">
                         I don't just write code; I build <span style="background: var(--accent-yellow);">digital ecosystems</span>.
@@ -411,7 +463,7 @@ html {
                 </div>
                 
                 <!-- Quick Tech Summary -->
-                <div class="bento-box box-blue" style="grid-column: span 2;">
+                <div class="bento-box box-blue bento-col-2">
                     <div style="display: flex; justify-content: space-between; align-items: center; height: 100%;">
                         <div>
                             <h3 class="bento-title">The Stack</h3>
@@ -565,7 +617,7 @@ html {
         <!-- Contact Section -->
         <section id="contact" class="cta-section">
             <div class="cta-box">
-                <div style="font-size: 3rem; font-weight: 900; font-family: 'Archivo', sans-serif; color: var(--accent-blue); margin-bottom: 1rem;">
+                <div class="cta-heading">
                     READY TO BUILD<br>THE FUTURE?
                 </div>
                 <p style="margin-bottom: 2rem; font-weight: 500;">I'm available for freelance projects and consulting.</p>
